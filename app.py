@@ -59,69 +59,72 @@ st.divider()
 
 # User Inputs
 
-geography = st.selectbox(
-    "Geography",
-    geo_encoder.categories_[0]
-)
+# User Inputs
+col1, col2 = st.columns(2)
 
-gender = st.selectbox(
-    "Gender",
-    gender_encoder.classes_
-)
+with col1:
+    geography = st.selectbox(
+        "Geography",
+        geo_encoder.categories_[0]
+    )
 
-credit_score = st.number_input(
-    "Credit Score",
-    min_value=300,
-    max_value=900,
-    value=650
-)
+    credit_score = st.number_input(
+        "Credit Score",
+        min_value=300,
+        max_value=900,
+        value=650
+    )
 
-age = st.slider(
-    "Age",
-    min_value=18,
-    max_value=92,
-    value=35
-)
+    tenure = st.slider(
+        "Tenure",
+        min_value=0,
+        max_value=10,
+        value=5
+    )
 
-tenure = st.slider(
-    "Tenure",
-    min_value=0,
-    max_value=10,
-    value=5
-)
+    num_of_products = st.slider(
+        "Number of Products",
+        min_value=1,
+        max_value=4,
+        value=1
+    )
 
-balance = st.number_input(
-    "Balance",
-    min_value=0.0,
-    value=0.0,
-    step=100.0
-)
+    is_active_member = st.selectbox(
+        "Is Active Member",
+        [0, 1]
+    )
 
-num_of_products = st.slider(
-    "Number of Products",
-    min_value=1,
-    max_value=4,
-    value=1
-)
+with col2:
+    gender = st.selectbox(
+        "Gender",
+        gender_encoder.classes_
+    )
 
-has_cr_card = st.selectbox(
-    "Has Credit Card",
-    [0, 1]
-)
+    age = st.slider(
+        "Age",
+        min_value=18,
+        max_value=92,
+        value=35
+    )
 
-is_active_member = st.selectbox(
-    "Is Active Member",
-    [0, 1]
-)
+    balance = st.number_input(
+        "Balance",
+        min_value=0.0,
+        value=0.0,
+        step=100.0
+    )
 
-estimated_salary = st.number_input(
-    "Estimated Salary",
-    min_value=0.0,
-    value=50000.0,
-    step=1000.0
-)
+    has_cr_card = st.selectbox(
+        "Has Credit Card",
+        [0, 1]
+    )
 
-st.divider()
+    estimated_salary = st.number_input(
+        "Estimated Salary",
+        min_value=0.0,
+        value=50000.0,
+        step=1000.0
+    )
 
 
 # Predict Button
